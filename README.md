@@ -17,7 +17,7 @@ npm i @lokua/bjorklund
 
 ## Usage
 
-**fn(fill, length[, offset = 0])**
+**eucideanSequence(fill, length[, offset = 0])**
 
 ```js
 const eucideanSequence = require('@lokua/eucidean-sequence')
