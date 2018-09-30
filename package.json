@@ -17,7 +17,5 @@
   ],
   "author": "Joshua Kleckner <lokua@lokua.net>",
   "license": "MIT",
-  "devDependencies": {
-    "jest": "23.6.0"
-  }
+  "devDependencies": {}
 }
