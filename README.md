@@ -6,8 +6,8 @@ http://cgm.cs.mcgill.ca/~godfried/publications/banff.pdf
 
 Other implementations:
 
-https://github.com/pingdynasty/EuclideanSequencer
-https://github.com/brianhouse/bjorklund/blob/master/__init__.py
+- https://github.com/pingdynasty/EuclideanSequencer
+- https://github.com/brianhouse/bjorklund/blob/master/__init__.py
 
 ## Install
 
