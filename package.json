@@ -1,14 +1,14 @@
 {
   "name": "euclid",
   "version": "1.0.0",
-  "description": "",
+  "description": "Euclidean pattern generator",
   "main": "index.js",
   "scripts": {
     "test": "node index.spec.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Joshua Kleckner <lokua@lokua.net>",
+  "license": "MIT",
   "devDependencies": {
     "jest": "23.6.0"
   }

@@ -2,28 +2,37 @@ module.exports = bjorklund
 
 function bjorklund(pulses, steps, offset = 0) {
   if (steps === 0) {
-    return []
+    throw new RangeError('steps must be greater than 0')
   }
 
-  pulses = pulses > steps ? steps : pulses
-
-  if (steps === 1) {
-    return pulses === 1 ? [1] : [0]
+  if (pulses === 0) {
+    return Array(steps).fill(0)
   }
+
+  pulses = pulses >= steps ? steps : pulses
 
   let pattern = []
   const counts = []
   const remainders = []
   let divisor = steps - pulses
   let level = 0
+  let iters = 0
 
   remainders.push(pulses)
 
   while (true) {
     counts.push(Math.floor(divisor / remainders[level]))
-    remainders.push(divisor % remainders[level])
+    const nextRemainder = divisor % remainders[level]
+    remainders.push(nextRemainder)
     divisor = remainders[level]
-    level += 1
+    level++
+    iters++
+
+    if (iters >= 1000) {
+      console.error('MAX_ITERS', divisor)
+      process.exit(1)
+      break
+    }
 
     if (remainders[level] <= 1) {
       break
@@ -31,8 +40,6 @@ function bjorklund(pulses, steps, offset = 0) {
   }
 
   counts.push(divisor)
-
-  console.log(counts, remainders, level)
 
   const build = level => {
     if (level === -1) {
@@ -54,7 +61,7 @@ function bjorklund(pulses, steps, offset = 0) {
   const firstOn = pattern.indexOf(1)
 
   if (firstOn > -1) {
-    pattern = pattern.slice(firstOn).concat(pattern.slice(0, firstOn))
+    pattern = [...pattern.slice(firstOn), ...pattern.slice(0, firstOn)]
   }
 
   if (offset > 0) {
