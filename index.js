@@ -16,7 +16,6 @@ function bjorklund(pulses, steps, offset = 0) {
   const remainders = []
   let divisor = steps - pulses
   let level = 0
-  let iters = 0
 
   remainders.push(pulses)
 
@@ -26,13 +25,6 @@ function bjorklund(pulses, steps, offset = 0) {
     remainders.push(nextRemainder)
     divisor = remainders[level]
     level++
-    iters++
-
-    if (iters >= 1000) {
-      console.error('MAX_ITERS', divisor)
-      process.exit(1)
-      break
-    }
 
     if (remainders[level] <= 1) {
       break
