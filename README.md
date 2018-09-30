@@ -1,4 +1,4 @@
-# @lokua/eucidean-sequence
+# @lokua/euclidean-sequence
 
 See:
 
@@ -20,7 +20,7 @@ npm i @lokua/euclidean-sequence
 **eucideanSequence(fill, length[, offset = 0])**
 
 ```js
-const eucideanSequence = require('@lokua/eucidean-sequence')
+const eucideanSequence = require('@lokua/euclidean-sequence')
 
 eucideanSequence(3, 8) // => [1, 0, 0, 1, 0, 0, 1, 0]
 ```
