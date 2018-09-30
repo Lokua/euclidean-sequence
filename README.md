@@ -12,7 +12,7 @@ Other implementations:
 ## Install
 
 ```sh
-npm i @lokua/bjorklund
+npm i @lokua/euclidean-sequence
 ```
 
 ## Usage
